@@ -4,6 +4,8 @@ An AngularJS directive to work with Scott Jehl's [Picturefill](https://github.co
 
 This directive works with dynamic content populated by the `$scope`.
 
+See the demo [here](http://tinacious.github.io/angular-picturefill/).
+
 
 ## Usage
 
