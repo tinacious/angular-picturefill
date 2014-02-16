@@ -2,7 +2,7 @@
   "name": "angular-picturefill",
   "description": "An AngularJS directive for Picturefill",
   "version": "0.1",
-  "main": "./angular-picturefill.js",
+  "main": "angular-picturefill.js",
   "ignore": [
     "readme.md"
   ],
