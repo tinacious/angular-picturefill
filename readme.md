@@ -15,6 +15,21 @@ This directive `picturefill` works with dynamic content populated by the `$scope
 
 **Note:** All files must share the same file extension for this directive to work properly and all file sizes must be available for each file.
 
+### With static images
+
+```html
+<span picture-fill data-alt="Juicy hanger steak on a croissant.">
+  <span pf-src="images/sizes/steak-croissant.png"></span>
+  <span pf-src="images/sizes/steak-croissant-100.png" data-media="(min-width: 1px)"></span>
+  <span pf-src="images/sizes/steak-croissant-300.png" data-media="(min-width: 400px)"></span>
+  <span pf-src="images/sizes/steak-croissant-600.png" data-media="(min-width: 645px)"></span>
+  <span pf-src="images/sizes/steak-croissant-1024.png" data-media="(min-width: 960px)"></span>
+  <span pf-src="images/sizes/steak-croissant.png" data-media="(min-width: 1200px)"></span>
+</span>
+```
+
+### With `$scope` data
+
 ```html
 <span picturefill data-alt="{{post.thumbnail.description}}" ng-if="post.thumbnail">
   <span pf-src="{{post.thumbnail.url}}"></span>
@@ -32,7 +47,4 @@ This directive `picturefill` works with dynamic content populated by the `$scope
 
 In the future I would like to implement the following:
 
-- Bower integration
 - Not requiring all file extensions to be the same
-
-Feel free to fork and contribute if you can help out with any of these items.
