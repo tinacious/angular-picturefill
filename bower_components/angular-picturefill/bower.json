@@ -1,0 +1,13 @@
+{
+  "name": "angular-picturefill",
+  "description": "An AngularJS directive for Picturefill",
+  "version": "0.1",
+  "main": "angular-picturefill.js",
+  "ignore": [
+    "readme.md"
+  ],
+  "dependencies": {
+    "picturefill": "~1.2.1",
+    "angular": "~1.2.0"
+  }
+}

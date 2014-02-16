@@ -1,0 +1,96 @@
+<!doctype html>
+<html id="ng-app" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="shrinkList jQuery plugin demo by Tinacious Design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Picturefill AngularJS directive</title>
+    <script type="text/javascript" src="//use.typekit.net/fcj5mrj.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" type="text/css" href="http://christinaholly.com/site/templates/css/main.css">
+    <style>
+      /* demo theme styles */
+      .container {
+        max-width: 600px;
+      }
+      .site-header .logo {
+        width: 100%;
+      }
+      .logo span, .logo img {
+        display: block;
+        float: left;
+      }
+      .logo span {
+        padding: 10px 0 0 10px;
+      }
+      .site-header {
+        padding: 5px 0;
+      }
+      .btn {
+        display: inline-block;
+        margin: 10px 0;
+      }
+      @media (max-width: 767px) { 
+        .site-header .logo span {
+          display: block; 
+        } 
+      }
+
+      /* demo styles */
+      .image-wrapper {
+        margin: 10px 0;
+        padding: 20px;
+        background: #e8e8e8;
+      }
+      .image-wrapper img {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <img src="http://tinaciousdesign.com/images/td-logo.png" alt="Tinacious Design logo" width="50">
+          <span><b><a href="http://tinaciousdesign.com/">Tinacious Design</a></b> &ndash; plugin demos</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="site-content">
+      <div class="container">
+        <h1>Picturefill AngularJS directive</h1>
+        <p>
+          This AngularJS directive extends Scott Jehl's picturefill plugin so that it can work with AngularJS.
+        </p>
+        <p>
+          It works with static and dynamic images.
+        </p>
+
+        <p>
+          <a href="http://github.com/tinacious/angular-picturefill" class="btn">View on Github</a>
+        </p>
+      </div>
+
+      <div class="image-wrapper">
+        <span picture-fill data-alt="Juicy hanger steak on a croissant.">
+          <span pf-src="images/steak-croissant.png"></span>
+          <span pf-src="images/steak-croissant-100.png" data-media="(min-width: 1px)"></span>
+          <span pf-src="images/steak-croissant-300.png" data-media="(min-width: 400px)"></span>
+          <span pf-src="images/steak-croissant-600.png" data-media="(min-width: 645px)"></span>
+          <span pf-src="images/steak-croissant-1024.png" data-media="(min-width: 960px)"></span>
+          <span pf-src="images/steak-croissant.png" data-media="(min-width: 1200px)"></span>
+        </span>
+      </div> <!--// .image-wrapper -->
+
+    </section>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/picturefill/picturefill.js"></script>
+    <script src="bower_components/angular-picturefill/angular-picturefill.js"></script>
+    
+    <script>
+      angular.module('myApp', ['ng.picturefill']);
+    </script>
+  </body>
+</html>

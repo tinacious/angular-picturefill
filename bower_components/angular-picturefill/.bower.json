@@ -1,0 +1,23 @@
+{
+  "name": "angular-picturefill",
+  "description": "An AngularJS directive for Picturefill",
+  "main": "angular-picturefill.js",
+  "ignore": [
+    "readme.md"
+  ],
+  "dependencies": {
+    "picturefill": "~1.2.1",
+    "angular": "~1.2.0"
+  },
+  "homepage": "https://github.com/tinacious/angular-picturefill",
+  "_release": "3f352e5309",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3f352e5309ce07e9bd87a06a53bbff414a858297"
+  },
+  "_source": "git://github.com/tinacious/angular-picturefill.git",
+  "_target": "*",
+  "_originalSource": "angular-picturefill",
+  "_direct": true
+}
