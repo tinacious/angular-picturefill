@@ -2,14 +2,14 @@
 
 An AngularJS directive to work with Scott Jehl's [Picturefill](https://github.com/scottjehl/picturefill) plugin for responsive images.
 
-This directive `picturefill` works with dynamic content populated by the `$scope`.
+This directive works with dynamic content populated by the `$scope`.
 
 
 ## Usage
 
 1. Include [Picturefill](https://github.com/scottjehl/picturefill) in your HTML.
 2. Add `ng.picturefill` as an app dependency.
-3. Use the `picturefill` directive.
+3. Use the `picture-fill` directive.
 4. Implement Picturefill as usual. Below is an example implementation but you can specify as many options as you like. The only difference is that `data-src` must be `pf-src` to avoid conflict.
 5. Use the provided `trimExt` filter on all URLs to remove the file extension so that you can append your custom image sizes. Don't forget to put it back. 
 
@@ -30,8 +30,10 @@ This directive `picturefill` works with dynamic content populated by the `$scope
 
 ### With `$scope` data
 
+The filter `trimExt` is provided for working with `$scope` data.
+
 ```html
-<span picturefill data-alt="{{post.thumbnail.description}}" ng-if="post.thumbnail">
+<span picture-fill data-alt="{{post.thumbnail.description}}" ng-if="post.thumbnail">
   <span pf-src="{{post.thumbnail.url}}"></span>
   <span pf-src="{{post.thumbnail.url | trimExt}}-150x150.jpg" data-media="(min-width: 1px)"></span>
   <span pf-src="{{post.thumbnail.url | trimExt}}-300x300.jpg" data-media="(min-width: 1px) and (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi),(min-resolution: 1.5dppx)"></span>
