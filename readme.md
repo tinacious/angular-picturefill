@@ -16,13 +16,13 @@ bower install angular-picturefill --save
 grunt bower-install
 ```
 
-1. Include [Picturefill](https://github.com/scottjehl/picturefill) in your HTML.
+1. Download and install with Bower or manually include this directive and [Picturefill](https://github.com/scottjehl/picturefill) in your HTML.
 2. Add `ng.picturefill` as an app dependency.
-3. Use the `picture-fill` directive.
+3. Use the `picture-fill` directive in your view.
 4. Implement Picturefill as usual. Below is an example implementation but you can specify as many options as you like. The only difference is that `data-src` must be `pf-src` to avoid conflict.
 5. Use the provided `trimExt` filter on all URLs to remove the file extension so that you can append your custom image sizes. Don't forget to put it back. 
 
-**Note:** All files must share the same file extension for this directive to work properly and all file sizes must be available for each file.
+**Note:** All images must share the same file extension for this directive to work properly and all file sizes must be available for each file.
 
 ### With static images
 
@@ -58,4 +58,4 @@ The filter `trimExt` is provided for working with `$scope` data.
 
 In the future I would like to implement the following:
 
-- Not requiring all file extensions to be the same
+- Not requiring all images to have the same file extension
