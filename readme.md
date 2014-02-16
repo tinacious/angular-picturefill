@@ -9,6 +9,13 @@ See the demo [here](http://tinacious.github.io/angular-picturefill/).
 
 ## Usage
 
+You can download and install into your project using Bower:
+
+```
+bower install angular-picturefill --save
+grunt bower-install
+```
+
 1. Include [Picturefill](https://github.com/scottjehl/picturefill) in your HTML.
 2. Add `ng.picturefill` as an app dependency.
 3. Use the `picture-fill` directive.
