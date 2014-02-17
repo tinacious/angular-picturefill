@@ -59,3 +59,5 @@ The filter `trimExt` is provided for working with `$scope` data.
 In the future I would like to implement the following:
 
 - Not requiring all images to have the same file extension
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tinacious/angular-picturefill/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
