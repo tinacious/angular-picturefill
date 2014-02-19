@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="pfDemo" id="ng-app"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Picturefill with dynamic data</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://christinaholly.com/site/templates/css/main.css">
+  <style type="text/css">
+    /* demo theme styles */
+    .container {
+      max-width: 600px;
+    }
+    .site-header .logo {
+      width: 100%;
+    }
+    .logo span, .logo img {
+      display: block;
+      float: left;
+    }
+    .logo span {
+      padding: 10px 0 0 10px;
+    }
+    .site-header {
+      padding: 5px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px 0;
+    }
+    @media (max-width: 767px) {
+      .site-header .logo span {
+        display: block;
+      }
+    }
+
+    /* demo styles */
+    .image-wrapper {
+      margin: 10px 0;
+      padding: 20px;
+      background: #e8e8e8;
+    }
+    .image-wrapper img {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body ng-controller="pfDemoCtrl">
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <img src="http://tinaciousdesign.com/images/td-logo.png" alt="Tinacious Design logo" width="50">
+        <span><b><a href="http://tinaciousdesign.com/">Tinacious Design</a></b> &ndash; plugin demos</span>
+      </div>
+    </div>
+  </header>
+ 
+  <section class="site-content">
+    <div class="container">
+      <h2>Picturefill demo for AngularJS with dynamic scope data</h2>
+      <p>
+        This is using JSON data. See the <a href="index.html">static</a> implementation.
+      </p>
+      <p>
+        Resize this window to see different <a href="http://jsonplaceholder.typicode.com/" target="_blank">source images</a> for different media queries.
+      </p>
+      <p>
+        <a href="http://github.com/tinacious/angular-picturefill" class="btn">View on Github</a>
+      </p>
+    </div>
+    <div class="image-wrapper">
+      <span picture-fill data-alt="Sample images from jsonplaceholder.typicode.com" ng-if="images">
+        <span pf-src="{{images[4].url}}"></span>
+        <span pf-src="{{images[0].url}}" data-media="(min-width: 1px)"></span>
+        <span pf-src="{{images[1].url}}" data-media="(min-width: 250px)"></span>
+        <span pf-src="{{images[2].url}}" data-media="(min-width: 500px)"></span>
+        <span pf-src="{{images[3].url}}" data-media="(min-width: 700px)"></span>
+        <span pf-src="{{images[4].url}}" data-media="(min-width: 1024px)"></span>
+      </span>      
+    </div> <!--// .image-wrapper -->
+  </section>
+ 
+  <script src="http://tinacious.github.io/angular-picturefill/bower_components/angular/angular.min.js"></script>
+  <script src="http://tinacious.github.io/angular-picturefill/bower_components/picturefill/picturefill.js"></script>
+  <script src="http://tinacious.github.io/angular-picturefill/bower_components/angular-picturefill/angular-picturefill.js"></script>
+ 
+  <script>
+    angular.module('pfDemo', ['ng.picturefill'])
+      .controller('pfDemoCtrl', function ($scope, $http) {
+        $http.get('http://jsonplaceholder.typicode.com/photos').success(function (data) {
+          $scope.data = data;
+          $scope.images = [];
+   
+          for (i = 0; i < 5; i++) {
+            $scope.images.push($scope.data[i]);
+          }
+        });
+      });
+  </script>
+</body>
+</html>
