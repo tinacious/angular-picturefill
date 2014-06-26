@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('ng.picturefill', [])
-  .directive('pictureFill', function () {
+  .directive('pictureFill', [function () {
     return {
       controller: 'PictureFillCtrl',
       link: function (scope, elem, attrs) {
         elem.attr('data-picture', '');
       }
     };
-  })
+  }])
   .directive('pfSrc', function () {
     return {
       link: function (scope, elem, attrs) {
@@ -16,13 +16,13 @@ angular.module('ng.picturefill', [])
       }
     };
   })
-  .controller('PictureFillCtrl', function ($timeout) {
+  .controller('PictureFillCtrl', ['$timeout', function ($timeout) {
     $timeout(picturefill);
-  })
-  .filter('trimExt', function () {
+  }])
+  .filter('trimExt', [function () {
     return function (text) {
       if (text) {
         return text.slice(0, text.lastIndexOf('.')) || text;
       }
     };
-  });
+  }]);
