@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="//use.typekit.net/fcj5mrj.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <link rel="stylesheet" href="http://christinaholly.com/site/templates/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://gistcdn.githack.com/tinacious/d89f3daf0e4555a2dc23fd3beb14e179/raw/5bd576497143efb5c1374cc3a02fa7e9191bc678/plugin-styles.css">
   <style type="text/css">
     /* demo theme styles */
     .container {
@@ -58,7 +58,7 @@
       </div>
     </div>
   </header>
- 
+
   <section class="site-content">
     <div class="container">
       <h2>Picturefill demo for AngularJS with dynamic scope data</h2>
@@ -80,21 +80,21 @@
         <span pf-src="{{images[2].url}}" data-media="(min-width: 500px)"></span>
         <span pf-src="{{images[3].url}}" data-media="(min-width: 700px)"></span>
         <span pf-src="{{images[4].url}}" data-media="(min-width: 1024px)"></span>
-      </span>      
+      </span>
     </div> <!--// .image-wrapper -->
   </section>
- 
+
   <script src="http://tinacious.github.io/angular-picturefill/bower_components/angular/angular.min.js"></script>
   <script src="http://tinacious.github.io/angular-picturefill/bower_components/picturefill/picturefill.js"></script>
   <script src="http://tinacious.github.io/angular-picturefill/bower_components/angular-picturefill/angular-picturefill.js"></script>
- 
+
   <script>
     angular.module('pfDemo', ['ng.picturefill'])
       .controller('pfDemoCtrl', function ($scope, $http) {
         $http.get('http://jsonplaceholder.typicode.com/photos').success(function (data) {
           $scope.data = data;
           $scope.images = [];
-   
+
           for (i = 0; i < 5; i++) {
             $scope.images.push($scope.data[i]);
           }
